@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CaseCraze - CS:GO Case Opening Simulator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎮 CaseCraze</h1>
+            <p>CS:GO Case Opening Simulator</p>
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-label">Money:</span>
+                    <span id="money">$10.00</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Cases Opened:</span>
+                    <span id="casesOpened">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Total Value:</span>
+                    <span id="totalValue">$0.00</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Best Item:</span>
+                    <span id="bestItem">None</span>
+                </div>
+            </div>
+            <div class="earn-money-section">
+                <button id="earnMoneyBtn" class="earn-money-btn">💰 Earn Money</button>
+                <p class="earn-money-info">Click to earn some money for opening cases!</p>
+            </div>
+        </header>
+
+        <main>
+            <section class="case-selection">
+                <h2>Select a Case</h2>
+                <div class="cases-grid">
+                    <div class="case-card" data-case="chroma">
+                        <img src="https://via.placeholder.com/150x150/FF6B6B/FFFFFF?text=Chroma+Case" alt="Chroma Case">
+                        <h3>Chroma Case</h3>
+                        <p class="case-price">$2.50</p>
+                        <button class="select-case-btn" data-case="chroma">Select</button>
+                    </div>
+                    <div class="case-card" data-case="spectrum">
+                        <img src="https://via.placeholder.com/150x150/4ECDC4/FFFFFF?text=Spectrum+Case" alt="Spectrum Case">
+                        <h3>Spectrum Case</h3>
+                        <p class="case-price">$1.80</p>
+                        <button class="select-case-btn" data-case="spectrum">Select</button>
+                    </div>
+                    <div class="case-card" data-case="phoenix">
+                        <img src="https://via.placeholder.com/150x150/45B7D1/FFFFFF?text=Phoenix+Case" alt="Phoenix Case">
+                        <h3>Phoenix Case</h3>
+                        <p class="case-price">$0.50</p>
+                        <button class="select-case-btn" data-case="phoenix">Select</button>
+                    </div>
+                    <div class="case-card" data-case="operation">
+                        <img src="https://via.placeholder.com/150x150/F39C12/FFFFFF?text=Operation+Case" alt="Operation Case">
+                        <h3>Operation Case</h3>
+                        <p class="case-price">$5.00</p>
+                        <button class="select-case-btn" data-case="operation">Select</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="case-opening" id="caseOpening" style="display: none;">
+                <div class="selected-case">
+                    <h2>Opening: <span id="selectedCaseName"></span></h2>
+                    <div class="case-animation">
+                        <div class="case-box" id="caseBox">
+                            <div class="case-lid"></div>
+                            <div class="case-body"></div>
+                        </div>
+                    </div>
+                    <button id="openCaseBtn" class="open-case-btn">Open Case ($2.50)</button>
+                    <button id="backBtn" class="back-btn">← Back to Cases</button>
+                </div>
+
+                <div class="roulette-container" id="rouletteContainer" style="display: none;">
+                    <div class="roulette-track" id="rouletteTrack">
+                        <!-- Items will be dynamically generated here -->
+                    </div>
+                    <div class="roulette-pointer"></div>
+                </div>
+
+                <div class="result-container" id="resultContainer" style="display: none;">
+                    <div class="result-card">
+                        <h3>You got:</h3>
+                        <div class="item-display">
+                            <div class="item-image" id="resultImage"></div>
+                            <div class="item-info">
+                                <h4 id="resultName"></h4>
+                                <p id="resultRarity"></p>
+                                <p class="item-value" id="resultValue"></p>
+                            </div>
+                        </div>
+                        <div class="result-actions">
+                            <button id="openAnotherBtn" class="open-another-btn">Open Another</button>
+                            <button id="changeCaseBtn" class="change-case-btn">Change Case</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="inventory">
+                <h2>Your Inventory</h2>
+                <div class="inventory-grid" id="inventoryGrid">
+                    <p class="empty-inventory">Open some cases to see your items here!</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
